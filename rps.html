@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rock Paper Scissors</title>
+  <style>
+    body {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Rock Paper Scissors</h1>
+  <button onclick="
+  
+  let num=Math.random()*3;
+  let comChoice;
+
+  if (num>0 && num<=1) {
+    comChoice='rock';
+  }else if(num>1 && num<=2){
+    comChoice='paper';
+  }else{
+    comChoice='scissors';
+  }
+
+  if (comChoice=='rock') {
+    alert(`You choose Rock. Computer choose ${comChoice}. Its a Tie`);
+  } else if (comChoice=='paper') {
+    alert(`You choose Rock. Computer choose ${comChoice}. You Loose`);
+  }else if (comChoice=='scissors') {
+    alert(`You choose Rock. Computer choose ${comChoice}. You Won`);
+  }
+
+  ">
+    Rock
+  </button>
+
+  <button onclick="
+  
+  num=Math.random()*3;
+
+  if (num>0 && num<=1) {
+    comChoice='rock';
+  }else if(num>1 && num<=2){
+    comChoice='paper';
+  }else{
+    comChoice='scissors';
+  }
+
+  if (comChoice==='rock') {
+    alert(`You choose Paper. Computer choose ${comChoice}. You Won`);
+  } else if (comChoice==='paper') {
+    alert(`You choose Paper. Computer choose ${comChoice}. Its a Tie`);
+  }else if (comChoice==='scissors') {
+    alert(`You choose Paper. Computer choose ${comChoice}. You Loose`);
+  }
+
+  ">
+    Paper
+  </button>
+
+  <button onclick="num=Math.random()*3;
+  
+    if (num>0 && num<=1) {
+      comChoice='rock';
+    }else if(num>1 && num<=2){
+      comChoice='paper';
+    }else{
+      comChoice='scissors';
+    }
+  
+    if (comChoice==='rock') {
+      alert(`You choose Scissors. Computer choose ${comChoice}. You Loose`);
+    } else if (comChoice==='paper') {
+      alert(`You choose Scissors. Computer choose ${comChoice}. You Won`);
+    }else if (comChoice==='scissors') {
+      alert(`You choose Scissors. Computer choose ${comChoice}. Its a Tie`);
+    }
+  ">
+    Scissors
+  </button>
+
+  <script></script>
+</body>
+
+</html>
