@@ -15,76 +15,72 @@
 <body>
   <h1>Rock Paper Scissors</h1>
   <button onclick="
-  
-  let num=Math.random()*3;
-  let comChoice;
-
-  if (num>0 && num<=1) {
-    comChoice='rock';
-  }else if(num>1 && num<=2){
-    comChoice='paper';
-  }else{
-    comChoice='scissors';
-  }
-
-  if (comChoice=='rock') {
-    alert(`You choose Rock. Computer choose ${comChoice}. Its a Tie`);
-  } else if (comChoice=='paper') {
-    alert(`You choose Rock. Computer choose ${comChoice}. You Loose`);
-  }else if (comChoice=='scissors') {
-    alert(`You choose Rock. Computer choose ${comChoice}. You Won`);
-  }
-
+   userMove='rock';
+    comChoice=gcomChoice();
+    resultmsg= getResult(userMove,comChoice);
+  alert(`You choose ${userMove}, Computer choose ${comChoice},${resultmsg}`);
   ">
     Rock
   </button>
 
   <button onclick="
-  
-  num=Math.random()*3;
-
-  if (num>0 && num<=1) {
-    comChoice='rock';
-  }else if(num>1 && num<=2){
-    comChoice='paper';
-  }else{
-    comChoice='scissors';
-  }
-
-  if (comChoice==='rock') {
-    alert(`You choose Paper. Computer choose ${comChoice}. You Won`);
-  } else if (comChoice==='paper') {
-    alert(`You choose Paper. Computer choose ${comChoice}. Its a Tie`);
-  }else if (comChoice==='scissors') {
-    alert(`You choose Paper. Computer choose ${comChoice}. You Loose`);
-  }
-
+   userMove='paper';
+   comChoice=gcomChoice();
+    resultmsg= getResult(userMove,comChoice);
+  alert(`You choose ${userMove}, Computer choose ${comChoice},${resultmsg}`);
   ">
     Paper
   </button>
 
-  <button onclick="num=Math.random()*3;
-  
-    if (num>0 && num<=1) {
-      comChoice='rock';
-    }else if(num>1 && num<=2){
-      comChoice='paper';
-    }else{
-      comChoice='scissors';
-    }
-  
-    if (comChoice==='rock') {
-      alert(`You choose Scissors. Computer choose ${comChoice}. You Loose`);
-    } else if (comChoice==='paper') {
-      alert(`You choose Scissors. Computer choose ${comChoice}. You Won`);
-    }else if (comChoice==='scissors') {
-      alert(`You choose Scissors. Computer choose ${comChoice}. Its a Tie`);
-    }
+  <button onclick=" 
+   userMove='scissors';
+   comChoice=gcomChoice();
+    resultmsg= getResult(userMove,comChoice);
+  alert(`You choose ${userMove}, Computer choose ${comChoice},${resultmsg}`);
   ">
     Scissors
   </button>
 
-  <script></script>
+  <script>
+    function gcomChoice() {
+      let num = Math.random() * 3;
+      if (num > 0 && num <= 1) {
+        return 'rock';
+      } else if (num > 1 && num <= 2) {
+        return 'paper';
+      } else {
+        return 'scissors';
+      }
+    }
+
+    function getResult(userMove, comMove) {
+      if (userMove === 'rock') {
+        if (comMove === 'rock') {
+          return 'Its a Tie';
+        } else if (comMove === 'paper') {
+          return 'You Loose';
+        } else if (comMove === 'scissors') {
+          return 'You Won';
+        }
+      } else if (userMove === 'paper') {
+        if (comMove === 'paper') {
+          return 'Its a Tie';
+        } else if (comMove === 'scissors') {
+          return 'You Loose';
+        } else if (comChoice === 'rock') {
+          return 'You Won';
+        }
+      } else if (userMove=== 'scissors') {
+        if (comMove === 'scissors') {
+          return 'Its a Tie';
+        } else if (comMove === 'paper') {
+          return 'You Won';
+        } else if (comMove === 'rock') {
+          return 'You Loose';
+        }
+      }
+    }
+  </script>
 </body>
 
 </html>
