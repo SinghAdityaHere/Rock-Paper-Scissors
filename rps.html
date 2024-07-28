@@ -18,7 +18,9 @@
    userMove='rock';
     comChoice=gcomChoice();
     resultmsg= getResult(userMove,comChoice);
-  alert(`You choose ${userMove}, Computer choose ${comChoice},${resultmsg}`);
+  alert(`You choose ${userMove}, Computer choose ${comChoice},${resultmsg}
+  
+  WON ${score.win} , LOST ${score.lost} , TIE ${score.tie}`);
   ">
     Rock
   </button>
@@ -27,7 +29,9 @@
    userMove='paper';
    comChoice=gcomChoice();
     resultmsg= getResult(userMove,comChoice);
-  alert(`You choose ${userMove}, Computer choose ${comChoice},${resultmsg}`);
+  alert(`You choose ${userMove}, Computer choose ${comChoice},${resultmsg},
+  
+  WON ${score.win} , LOST ${score.lost} , TIE ${score.tie}`);
   ">
     Paper
   </button>
@@ -36,12 +40,21 @@
    userMove='scissors';
    comChoice=gcomChoice();
     resultmsg= getResult(userMove,comChoice);
-  alert(`You choose ${userMove}, Computer choose ${comChoice},${resultmsg}`);
+  alert(`You choose ${userMove}, Computer choose ${comChoice},${resultmsg}
+  
+  WON ${score.win} , LOST ${score.lost} , TIE ${score.tie}`);
   ">
     Scissors
   </button>
 
   <script>
+
+    let score={
+      win:0,
+      lost:0,
+      tie:0,
+    };
+
     function gcomChoice() {
       let num = Math.random() * 3;
       if (num > 0 && num <= 1) {
@@ -56,26 +69,35 @@
     function getResult(userMove, comMove) {
       if (userMove === 'rock') {
         if (comMove === 'rock') {
+          score.tie++
           return 'Its a Tie';
         } else if (comMove === 'paper') {
+          score.lost++
           return 'You Loose';
         } else if (comMove === 'scissors') {
+          score.win++
           return 'You Won';
         }
       } else if (userMove === 'paper') {
         if (comMove === 'paper') {
+          score.tie++
           return 'Its a Tie';
         } else if (comMove === 'scissors') {
+          score.lost++
           return 'You Loose';
         } else if (comChoice === 'rock') {
+          score.win++
           return 'You Won';
         }
       } else if (userMove=== 'scissors') {
         if (comMove === 'scissors') {
+          score.tie++
           return 'Its a Tie';
         } else if (comMove === 'paper') {
           return 'You Won';
+          score.win++
         } else if (comMove === 'rock') {
+          score.lost++
           return 'You Loose';
         }
       }
